@@ -4,6 +4,7 @@ import Products from './products';
 import '../Styles/index.css';
 
 
+
 export default class App extends Component {
   state = {
     products : []
@@ -17,6 +18,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>shopping cart</h1>
+        <hr />
         <Products products={this.state.products} />       
       </div>
     )

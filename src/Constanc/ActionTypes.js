@@ -1,0 +1,1 @@
+export const Recive_Product = 'Recive_Product'
