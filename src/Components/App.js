@@ -9,8 +9,7 @@ export default class App extends Component {
     products : []
   }
   componentDidMount() {
-    shop.getProducts((products)=> {
-      console.log(products);
+    shop.getProducts((products)=> {    
       this.setState({products})
     })
   }
