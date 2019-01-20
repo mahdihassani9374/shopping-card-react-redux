@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import ProductItem from './ProductItem';
 
 export default class Products extends Component {
   render() {
       let {products} = this.props;
       console.log(products);
     return (
-      <ul>
+      <div>
           {
-              products.map((item,index)=><li key={index}>{item.name}</li>)
+              products.map((item,index)=><ProductItem key={index} product={item} />)
           }
-      </ul>
+      </div>
     )
   }
 }

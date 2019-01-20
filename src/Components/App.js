@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import shop from '../shop';
 import Products from './products';
+import '../Styles/index.css';
 
 
 export default class App extends Component {
