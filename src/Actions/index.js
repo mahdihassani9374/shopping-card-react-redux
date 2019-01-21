@@ -1,9 +1,7 @@
-import * as types '../Constanc/ActionTypes';
-const recive_Product = products => {
+import * as types from '../Constanc/ActionTypes';
+export const reciveProduct = (products) => {
     return {
-        type:'Recive_Product',
+        type:types.Recive_Product,
         products
     }
 }
-
-expoert default types.Recive_Product;

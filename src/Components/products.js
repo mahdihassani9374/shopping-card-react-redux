@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import ProductItem from './ProductItem';
+import {connect} from 'react-redux';
 
-export default class Products extends Component {
+class Products extends Component {
   render() {
-    let {products} = this.props;      
+    
+    let {products} = this.props; 
+    console.log(products);     
     return (
       <div>
           {
@@ -13,3 +16,14 @@ export default class Products extends Component {
     )
   }
 }
+
+const getProducts = (products) => Object.keys(products).map(id=>products[id])
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    products : getProducts(state.products)
+  }
+}
+
+export default connect(mapStateToProps)(Products)
