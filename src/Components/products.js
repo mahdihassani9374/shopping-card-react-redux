@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import ProductItem from './ProductItem';
 import {connect} from 'react-redux';
+import {addToCart} from '../Actions';
 
 class Products extends Component {
   render() {
     
-    let {products} = this.props; 
-    console.log(products);     
+    let {products,dispatch} = this.props;       
     return (
       <div>
           {
-              products.map((item,index)=><ProductItem key={index} product={item} />)
+              products.map((item,index)=><ProductItem onClicked={()=>dispatch(addToCart(item.id))} key={index} product={item} />)
           }
       </div>
     )
@@ -19,8 +19,7 @@ class Products extends Component {
 
 const getProducts = (products) => Object.keys(products).map(id=>products[id])
 
-const mapStateToProps = (state) => {
-  console.log(state);
+const mapStateToProps = (state) => { 
   return {
     products : getProducts(state.products)
   }

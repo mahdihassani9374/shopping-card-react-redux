@@ -4,6 +4,7 @@ import Products from './products';
 import {connect} from 'react-redux';
 import '../Styles/index.css';
 import {reciveProduct} from '../Actions/index'; 
+import Cart from './Cart';
 
 
 class App extends Component {
@@ -15,9 +16,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>shopping cart</h1>
+        <h1>products</h1>
         <hr />
-        <Products />       
+        <Products />   
+        <hr />
+        <Cart />    
       </div>
     )
   }
